@@ -1,0 +1,3 @@
+const feedback=document.querySelector('#choice-feedback');
+const explanations={intensa:'A produção cresce mais rápido, mas a extração consome recursos e aumenta os impactos ambientais.',moderada:'A exploração moderada busca conciliar produção e conservação, sem eliminar os impactos do uso do carvão.',preservar:'Preservar a reserva reduz a extração, mas a sociedade precisa encontrar outras formas de atender à demanda de energia.'};
+document.querySelectorAll('[data-choice]').forEach(button=>{button.setAttribute('aria-pressed','false');button.addEventListener('click',()=>{document.querySelectorAll('[data-choice]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));feedback.textContent=explanations[button.dataset.choice];});});
